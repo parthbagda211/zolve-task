@@ -26,18 +26,31 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public Object getAllUsers() {
+
+        List<User> users = userService.getAllUsers();
+        if (users == null || users.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No users found");
+        }
+        return ResponseEntity.ok(users);
+
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public Object getUserById(@PathVariable Long id) {
+        if (userService.getUserById(id) == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
+        return ResponseEntity.ok(userService.getUserById(id));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public Object deleteUser(@PathVariable Long id) {
+        if (userService.getUserById(id) == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
         userService.deleteUser(id);
+       return ResponseEntity.ok("User deleted successfully");
     }
 
     @GetMapping("/activeplan/{userId}")
