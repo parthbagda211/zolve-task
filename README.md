@@ -9,6 +9,11 @@ This API allows users to manage their subscriptions. Users can create accounts, 
 - PostgreSQL Driver
 - Spring JPA
 
+## Config for DB
+
+- spring.datasource.url=jdbc:postgresql://localhost:5432/db_name
+- spring.datasource.username=your_username
+- spring.datasource.password=your_passowd
 
 ### Create table for subcriptions
 
