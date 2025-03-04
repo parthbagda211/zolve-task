@@ -72,7 +72,12 @@ Check constraints:
 Referenced by:
     TABLE "user_subscriptions" CONSTRAINT "fkcrkxok09b5ucoqbd9gpuqy2kb" FOREIGN KEY (subscription_id) REFERENCES subscriptions(id)
 ```
-
+---
+```
+SILVER - 1 (subscriptionId)
+GOLD - 2 (subscriptionId)
+PLATINUM - 3 (subscriptionId)
+```
 ## Base URL
 ```
 http://localhost:8080
