@@ -1,0 +1,21 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="parthbagda">
+        <insert tableName="subscriptions">
+            <column name="name" value="Silver Plan"/>
+            <column name="type" value="SILVER"/>
+        </insert>
+        <insert tableName="subscriptions">
+            <column name="name" value="Gold Plan"/>
+            <column name="type" value="GOLD"/>
+        </insert>
+        <insert tableName="subscriptions">
+            <column name="name" value="Platinum Plan"/>
+            <column name="type" value="PLATINUM"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
