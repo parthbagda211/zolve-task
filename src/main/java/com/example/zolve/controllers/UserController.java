@@ -59,6 +59,10 @@ public class UserController {
 
     @GetMapping("/activeplan/{userId}")
     public ResponseEntity<?> getCurrentActivePlan(@PathVariable Long userId) {
+
+        if (userService.getUserById(userId) == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
         if (userService.getCurrentActivePlan(userId).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not have an active plan");
         }
