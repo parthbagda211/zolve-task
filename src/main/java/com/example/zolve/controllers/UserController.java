@@ -1,6 +1,7 @@
 package com.example.zolve.controllers;
 
 import com.example.zolve.entities.User;
+import com.example.zolve.repositories.UserSubscriptionRepository;
 import com.example.zolve.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserSubscriptionRepository userSubscriptionRepository;
 
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody User user) {

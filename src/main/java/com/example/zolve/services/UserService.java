@@ -4,6 +4,7 @@ import com.example.zolve.entities.User;
 import com.example.zolve.entities.UserSubscription;
 import com.example.zolve.repositories.UserRepository;
 import com.example.zolve.repositories.UserSubscriptionRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,13 +37,15 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
-    }
-
     public Optional<UserSubscription> getCurrentActivePlan(Long userId) {
         return userSubscriptionRepository
                 .findByUserIdAndStatus(userId, "ACTIVE")
                 .stream().findFirst();
+    }
+
+    @Transactional
+    public void deleteUser(Long userId) {
+        userSubscriptionRepository.deleteByUserId(userId);
+        userRepository.deleteById(userId);
     }
 }
