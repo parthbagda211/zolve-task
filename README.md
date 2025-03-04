@@ -79,11 +79,6 @@ Run the Spring Boot application using:
 ```bash
 ./mvnw spring-boot:run
 ```
-Or if using Gradle:
-```bash
-./gradlew bootRun
-```
-
 ---
 
 ## User Controller Endpoints
