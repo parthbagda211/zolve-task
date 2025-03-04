@@ -81,7 +81,7 @@ Or if using Gradle:
 curl -X POST http://localhost:8080/users/create \
      -H "Content-Type: application/json" \
      -d '{
-         "username": "parth bagda",
+         "name": "parth bagda",
          "email": "parthbagda94@gmail.com"
 
      }'
