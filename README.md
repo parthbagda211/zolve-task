@@ -74,9 +74,9 @@ Referenced by:
 ```
 ---
 ```
-SILVER - 1 (subscriptionId)
-GOLD - 2 (subscriptionId)
-PLATINUM - 3 (subscriptionId)
+SILVER - 1 (subscriptionId) : SILVER is weekly subscription
+GOLD - 2 (subscriptionId) : GOLD is monthly subscription
+PLATINUM - 3 (subscriptionId) : PLATINUM is yearly subscription
 ```
 ## Base URL
 ```
